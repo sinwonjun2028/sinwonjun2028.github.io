@@ -19,9 +19,9 @@ fetch("/data/works.json")
     .then(response => response.json())
     .then(works => {
         for (const work of works) {
-            btn = document.createElement("button");
+            const btn = document.createElement("button");
             btn.textContent = work.title;
-            btn.addEventListner("click", () => analyze(work));
+            btn.addEventListener("click", () => analyze(work));
             btnBox.appendChild(btn);
         }
     });
@@ -30,9 +30,9 @@ function analyze(work) {
     fetch(work.file)
         .then(response => response.text())
         .then(text => {
-            nowBox.textContent = `$<{work.title}> 분석 결과`;
-            const counts = countChar(text, targets);
-            drawlist(targets, counts);
+            nowBox.textContent = `<${work.title}> 분석 결과`;
+            const counts = targets.map(t => countChar(text, t));
+            drawList(targets, counts);
             drawTop(targets, counts);
         })
 }
@@ -40,7 +40,7 @@ function analyze(work) {
 function drawList(targets, counts) {
     list.textContent = "";
     for (let i = 0; i < targets.length; i++) {
-        li = document.createElement("li");
+        const li = document.createElement("li");
         li.textContent = `'${targets[i]}': ${counts[i]}번`;
         list.appendChild(li);
     }
