@@ -41,7 +41,7 @@ function drawBar(counts) {
     if (barChart !== null) barChart.destroy();
 
     const canvas = document.querySelector("#bar-chart");
-    new Chart(canvas, {
+    barChart = new Chart(canvas, {
         type: "bar",
         data: {
             labels: targets,
@@ -58,7 +58,7 @@ function drawPie(counts) {
     if (pieChart !== null) pieChart.destroy();
 
     const canvas = document.querySelector("#pie-chart");
-    new Chart(canvas, {
+    pieChart = new Chart(canvas, {
         type: "pie",
         data: {
             labels: targets,

@@ -10,4 +10,4 @@ permalink: /works-chart/
 <canvas id="bar-chart"></canvas>
 <canvas id="pie-chart"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/assets/js/works-chart.js">
+<script src="/assets/js/works-chart.js"></script>
