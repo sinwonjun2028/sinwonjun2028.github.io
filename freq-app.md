@@ -8,7 +8,7 @@ permalink: /freq-app/
     <p>분석할 글:</p>
     <textarea id="text-input" rows="3" cols="50"></textarea>
     <p>셀 글자(쉼표로 구분):</p>
-    <input id="target-input" type="text"></input>
+    <input id="target-input" type="text">
     <button type="submit">분석</button>
 </form>
 
