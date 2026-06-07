@@ -1,4 +1,4 @@
-fetch("data/poems.csv")
+fetch("/data/poems.csv")
     .then(response => response.text())
     .then(csv => {
         const data = csv
@@ -21,7 +21,7 @@ fetch("data/poems.csv")
         const counts = data.map(line => line.count);
 
         const canvas = document.querySelector("#poems-chart")
-        new CharacterData(canvas, {
+        new Chart(canvas, {
             type: "bar",
             data: {
                 labels: labels,
